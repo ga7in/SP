@@ -1,13 +1,13 @@
 nu0 <- c(170.73,88.89,55.72,294.94,7159.85) # Initial probability distribution # Define transition matrix  P <- matrix(c(0.341872,0.005181,0.000302,0.020245,0.632399,                0.000721,0.252154,0.106683,0.005347,0.635096,                0.000337,0.043354,0.507752,0.014616,0.433941,                0.000147,0.002263,0.004237,0.665474,0.327879,                0.006847,0.006548,0.006517,0.024504,0.955583),              nrow=5, ncol=5, byrow=TRUE)
 # Probability distribution after step 1 
 nu1 <- nu0 %*% P
-barplot(nu1, names.arg =c("River Wetland","lake Wetland","Pond Wetland","Paddy Wetland","Non-wetland"), main = "Probabilities after step n=1")
+barplot(nu1, names.arg =c("River Wetland","lake Wetland","Pond Wetland","Paddy Wetland","Non-wetland"), main = " Predicted wetland distribution after step n=1")
 # Probability distribution after step 2 
 nu2 <- nu1 %*% P
-barplot(nu2, names.arg =c("River Wetland","lake Wetland","Pond Wetland","Paddy Wetland","Non-wetland"), main = "Probabilities after step n=2")
+barplot(nu2, names.arg =c("River Wetland","lake Wetland","Pond Wetland","Paddy Wetland","Non-wetland"), main = " Predicted wetland distribution after step n=2")
 n <- 0 # The current step number. Start at 0 
 nu <- c(170.73,88.89,55.72,294.94,7159.85) # Initial probability distribution
 # Advance by one step 
 n <- n+1 
 nu <- nu %*% P 
-barplot(nu, names.arg =c("River Wetland","lake Wetland","Pond Wetland","Paddy Wetland","Non-wetland"), main = paste("Probabilities after step n=", n))
+barplot(nu, names.arg =c("River Wetland","lake Wetland","Pond Wetland","Paddy Wetland","Non-wetland"), main = paste("Predicted wetland distribution after step n=", n))
